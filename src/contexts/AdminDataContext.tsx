@@ -158,6 +158,7 @@ export const AdminDataProvider: React.FC<{ children: React.ReactNode }> = ({ chi
         const data = await response.json();
         const formattedData = data.map((p: any) => ({
           ...p,
+          price: Number(p.price),
           image: formatUrl(p.image),
           video: formatUrl(p.video),
           images: p.images ? p.images.map((img: any) => ({ ...img, image: formatUrl(img.image) })) : []
@@ -179,6 +180,12 @@ export const AdminDataProvider: React.FC<{ children: React.ReactNode }> = ({ chi
         // Map Django order fields to frontend interface
         const mappedOrders = data.map((o: any) => ({
           ...o,
+          total: Number(o.total),
+          shipping: Number(o.shipping),
+          items: o.items ? o.items.map((item: any) => ({
+            ...item,
+            price: Number(item.price)
+          })) : [],
           customer: {
             email: o.email,
             firstName: o.first_name,

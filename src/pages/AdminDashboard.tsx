@@ -58,7 +58,7 @@ export const AdminDashboard = () => {
                     <p className="text-xs text-muted-foreground">{new Date(order.createdAt).toLocaleDateString()}</p>
                   </div>
                   <div className="text-right">
-                    <p className="font-medium">${order.total.toFixed(2)}</p>
+                    <p className="font-medium">${Number(order.total).toFixed(2)}</p>
                     <span className={`text-[10px] uppercase tracking-wider px-2 py-0.5 rounded-full ${
                       order.status === 'paid' ? 'bg-green-100 text-green-700' : 
                       order.status === 'pending' ? 'bg-yellow-100 text-yellow-700' : 
