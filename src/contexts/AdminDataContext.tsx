@@ -1,7 +1,7 @@
 import React, { createContext, useContext, useState, useEffect } from "react";
 import { Product, Order, Collection, Category } from "@/data/products";
 
-const BASE_URL = (import.meta as any).env?.VITE_API_BASE_URL || "http://localhost:8000";
+const BASE_URL = (import.meta as any).env?.VITE_API_BASE_URL || "https://sleepy-carrie-ayesha25-2b164d3d.koyeb.app";
 const API_BASE_URL = `${BASE_URL}/api`;
 
 const formatUrl = (url: string | undefined) => {
